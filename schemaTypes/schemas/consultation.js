@@ -4,6 +4,11 @@ export default {
     title: 'Consultation',
     fields: [
         {
+            name: 'title',
+            type: 'string',
+            title: 'Title'
+        },
+        {
             name: 'countries',
             type: 'array',
             title: 'Countries',
