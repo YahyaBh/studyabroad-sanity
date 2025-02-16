@@ -1,7 +1,7 @@
 export default {
     name: 'university',
     type: 'document',
-    title: 'University',
+    title: 'University Information',
     fields: [
         {
             name: 'name',
@@ -108,7 +108,7 @@ export default {
         },
         {
             name: 'top_graduates',
-            tpye: 'array',
+            type: 'array',
             title: 'Top Graduates',
             of: [
                 {
@@ -147,14 +147,27 @@ export default {
             name: 'courses',
             type: 'array',
             title: 'Courses Offered',
-            of: [{ type: 'reference', to: [{ type: 'course' }] }],
+            of: [{
+                type: 'object', fields: [
+                    {
+                        name: 'course',
+                        type: 'string',
+                        title: 'Course',
+                    },
+                    {
+                        name: 'duration',
+                        type: 'string',
+                        title: 'Duration',
+                    },
+
+                ],
+            }]
         },
         {
             name: 'tuition_fees',
-            type: 'number',
+            type: 'array',
             title: 'Tuition Fees and other expenses',
             description: 'The average tuition fees and other expenses for the university in USD per year.',
-            validation: Rule => Rule.required().min(0),
             of: [
                 {
                     type: 'object',
@@ -168,6 +181,7 @@ export default {
                             name: 'fee',
                             type: 'number',
                             title: 'Fee',
+                            validation: Rule => Rule.required().min(0),
                         },
                     ],
                 },
@@ -181,4 +195,4 @@ export default {
             validation: Rule => Rule.required().min(0).max(100),
         },
     ],
-};
+}

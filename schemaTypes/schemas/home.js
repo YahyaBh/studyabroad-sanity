@@ -4,6 +4,11 @@ export default {
     title: 'Home Information',
     fields: [
         {
+            name: 'title',
+            type: 'string',
+            title: 'Your Agency Name'
+        },
+        {
             name: 'description',
             type: 'text',
             title: 'Description'
@@ -32,7 +37,7 @@ export default {
                     type: 'reference',
                     to: [
                         {
-                            type: 'service'
+                            type: 'services'
                         }
                     ]
                 }
