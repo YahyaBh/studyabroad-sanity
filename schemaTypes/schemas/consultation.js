@@ -41,14 +41,8 @@ export default {
             title: 'Study Level',
             of: [
                 {
-                    type: 'object',
-                    fields: [
-                        {
-                            name: 'level',
-                            type: 'string',
-                            title: 'Level'
-                        }
-                    ]
+                    type: 'reference',
+                    to : [{ type: 'study_level' }]
                 }
             ]
         },
