@@ -1,50 +1,29 @@
 export default {
     name: 'consultation',
     type: 'document',
-    title: 'Consultation',
+    title: 'Consultation Information',
     fields: [
         {
             name: 'title',
             type: 'string',
-            title: 'Title'
+            title: 'Your Agency Name'
+        },
+        {
+            name: 'description',
+            type: 'text',
+            title: 'Description'
         },
         {
             name: 'countries',
             type: 'array',
             title: 'Countries',
-            of: [
-                {
-                    type: 'object',
-                    fields: [
-                        {
-                            name: 'country',
-                            type: 'string',
-                            title: 'Country'
-                        },
-                        {
-                            name: 'image',
-                            type: 'image',
-                            title: 'Image'
-                        },
-                        {
-                            name: 'description',
-                            type: 'text',
-                            title: 'Description'
-                        }
-                    ]
-                }
-            ]
+            of: [{ type: 'reference', to: [{ type: 'country' }] }]
         },
         {
-            name: 'study_level',
+            name: 'levels',
             type: 'array',
-            title: 'Study Level',
-            of: [
-                {
-                    type: 'reference',
-                    to : [{ type: 'study_level' }]
-                }
-            ]
-        },
+            title: 'Study Levels',
+            of: [{ type: 'reference', to: [{ type: 'study_level' }] }]
+        }
     ]
 }
