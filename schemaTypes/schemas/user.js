@@ -1,7 +1,7 @@
 export default {
     name: 'user',
     label: 'User',
-    type : 'document',
+    type: 'document',
     fields: [
         {
             name: 'name',
@@ -22,6 +22,21 @@ export default {
             name: 'token',
             label: 'Token',
             type: 'string'
+        },
+        {
+            name: 'verified',
+            label: 'Verified',
+            type: 'boolean',
+            initialValue: false
+        },
+        {
+            name: 'image',
+            label: 'Image',
+            type: 'image',
+            options: {
+                hotspot: true
+            },
+            default: 'https://cdn.sanity.io/images/5hlpazgd/production/5f7a9a5d-6c8b-4b9d-8a8a-5b8b5d8a8a8a-200x200.png?w=200&h=200&fit=crop'
         },
         {
             name: 'country_chosen',
@@ -74,8 +89,8 @@ export default {
             of: [{ type: 'string' }],
             options: {
                 list: [
-                    { title: 'Credit Card', value: 'Credit Card' },
-                    { title: 'Bank Transfer', value: 'Bank Transfer' },
+                    { title: 'Cash (In Agency)', value: 'cash' },
+                    { title: 'Bank Transfer', value: 'bank' },
                     { title: 'Other', value: 'Other' }
                 ]
             }
