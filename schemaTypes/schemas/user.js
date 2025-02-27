@@ -83,6 +83,15 @@ export default {
             type: 'string'
         },
         {
+            name: 'meetingLink',
+            label: 'Meeting Link',
+            type: 'url',
+            validation: Rule => Rule.uri({
+                scheme: ['http', 'https']
+            }),
+            hidden: ({ document }) => document?.meetingType !== 'Online'
+        },
+        {
             name: 'payment_method',
             label: 'Payment Method',
             type: 'array',
