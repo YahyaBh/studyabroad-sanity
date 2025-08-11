@@ -5,6 +5,8 @@ import consultation from './schemas/consultation'
 import country from './schemas/country'
 import study_level from './schemas/study_level'
 import user from './schemas/user'
+import contact from './schemas/contact'
+import newsLetter from './schemas/newsLetter'
 
 
-export const schemaTypes = [home , university , services , consultation , country , study_level , user]
+export const schemaTypes = [home , university , services , consultation , country , study_level , user , contact , newsLetter]
